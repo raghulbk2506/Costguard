@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "costguard"
+version = "1.0.0"
+description = "Azure Infrastructure Cost Impact Predictor and Budget Firewall"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "CostGuard Engineering" }]
+dependencies = [
+    "click>=8.0.0",
+    "rich>=13.0.0",
+    "httpx>=0.25.0",
+    "pydantic>=2.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+]
+
+[project.scripts]
+costguard = "costguard.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["costguard*"]
